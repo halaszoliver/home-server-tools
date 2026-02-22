@@ -1,0 +1,6 @@
+resources:
+  - ../base
+
+images:
+  - name: renovate/renovate
+    newTag: "43.0.9"
