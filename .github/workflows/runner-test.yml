@@ -1,0 +1,30 @@
+name: Self-hosted runner smoke test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+
+    steps:
+      - name: Basic context
+        run: |
+          echo "Runner name: $RUNNER_NAME"
+          echo "OS: $RUNNER_OS"
+          echo "Arch: $RUNNER_ARCH"
+          uname -a
+          whoami
+          pwd
+
+      - name: Disk & memory
+        run: |
+          df -h
+          free -h || true
+
+      - name: Tooling check
+        run: |
+          which docker || echo "docker not found"
+          which kubectl || echo "kubectl not found"
+          docker version || true
+          kubectl version --client || true
