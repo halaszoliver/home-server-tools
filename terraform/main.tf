@@ -14,6 +14,6 @@ resource "kubernetes_secret_v1" "tools-secrets" {
   }
 
   data = {
-    RENOVATE_TOKEN = vars.github_token
+    RENOVATE_TOKEN = var.github_token
   }
 }
