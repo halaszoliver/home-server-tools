@@ -35,7 +35,7 @@ spec:
                 - name: RENOVATE_TOKEN
                   valueFrom:
                     secretKeyRef:
-                      name: infra-secrets
+                      name: tools-secrets
                       key: RENOVATE_TOKEN
                 - name: RENOVATE_BASE_DIR
                   value: '/tmp/renovate/'
